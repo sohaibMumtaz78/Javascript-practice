@@ -1,4 +1,5 @@
 // document.write("Practice JS")
+// console.log("class 26")
 
 function foo() {
     console.log("Welcome"); 
