@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group h6 {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #5e9eff;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #5e9eff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #4a8de0;
+}
+
+.signin-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.signin-link a {
+  color: #5e9eff;
+  text-decoration: none;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+}
+
+/* === Dashboard Layout === */
+.dashboard-container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background: transparent;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #5e9eff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #3366cc;
+}
+
+/* === Dashboard Card === */
+.dashboard-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.dashboard-card p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.todo-input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.todo-input-group input {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.todo-input-group button {
+  padding: 0.75rem 1.2rem;
+  background: #5e9eff;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.todo-input-group button:hover {
+  background: #4a8de0;
+}
+
+/* === Task List === */
+#taskList {
+  list-style: none;
+  padding: 0;
+}
+
+#taskList li {
+  background: #f0f4f8;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#taskList li button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#taskList li button:hover {
+  background: #e04343;
+}
