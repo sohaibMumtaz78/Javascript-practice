@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href=""> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Image Editor</h2>
+        <div class="wrapper">
+            <div class="editor-panel">
+                <div class="filter">
+                    <label class="title">Filters</label>
+                    <div class="option">
+                        <button class="optbtn">Brightness</button>
+                        <button>Saturation</button>
+                        <button>Inversion</button>
+                        <button>Grayscale</button>
+                    </div>
+                    <div class="slider">
+                        <div class="filter-info">
+                            <p class="name" >Brightness</p>
+                            <p class="value" 100%>100%</p>
+                        </div>
+                        <input type="range" value="100" min="0" max="200">
+                    </div>
+                </div>
+                <div class="rotate">
+                    <label class="title">Rotate & Flip</label>
+                    <div class="option">
+                        <button><i class="fa-solid fa-rotate-left"></i></button>
+                        <button><i class="fa-solid fa-rotate-right"></i></button>
+                        <button><i class="fa-solid fa-ruler-vertical"></i></i></button>
+                        <button><i class="fa-solid fa-ruler-horizontal"></i></i></button>
+                        <!-- <button><i class="fa-solid fa-rotate-left"></i></button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="image-preview" id="image-preview">
+                <img src="image-placeholder.svg" alt="preview-img" width="100%" height="400px">
+            </div>
+        </div>
+        <div class="control">
+            	<button class="reset-filter">Reset filter</button>
+                <div class="row">
+                    <input type="file" id="input-file" accept="image/*" hidden>
+                    <button class="choose-img" id="choose-img">Choose Img</button>
+                    <button class="save-img">Save Img</button>
+                </div>
+        </div>
+    </div>
+
+</body>
+<script src="app.js"></script>
+
+</html>
