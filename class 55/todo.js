@@ -12,6 +12,14 @@ function addTask() {
         email: userObj.email,
     }
 
+    var imp  = taskInput.value
+
+    if(!imp){
+        // console.log("worngs")
+        alert("Please Enter your task")
+        return  
+    }
+
     // console.log("todoObj", todoObj)
 
     var tododata = localStorage.getItem("todos")
@@ -24,11 +32,13 @@ function addTask() {
     } else {
         var todoArr = JSON.parse(tododata)
         todoArr.push(todoObj),
-            console.log("todoArr", todoArr)
+        console.log("todoArr", todoArr)
         localStorage.setItem("todos", JSON.stringify(todoArr))
 
     }
-    renderUI()
+    // todo.value = ""
+    taskInput.value = ""
+        renderUI()
 }
 
 
