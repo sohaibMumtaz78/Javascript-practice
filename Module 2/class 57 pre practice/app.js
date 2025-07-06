@@ -8,7 +8,7 @@ var loadImage = () => {
     var file = fileInput.files[0]
     if (!file) return
     console.log(file)
-     previewImg.svg = URL.createObjectURL(file);
+     previewImg.s = URL.createObjectURL(file);
 }
 
 fileInput.addEventListener("change", loadImage)
