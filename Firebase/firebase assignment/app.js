@@ -70,7 +70,9 @@ function createUserAccount() {
             signup_name.value = "";
             signup_email.value = "";
             signup_password.value = "";
-            alert(`Welcome ${signup_name.value}`);
+            alert(`Welcome ${signup_email.value}`);
+             window.location.href = "login.html";
+
         })
         .catch((error) => {
             const errorCode = error.code;
