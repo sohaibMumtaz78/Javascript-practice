@@ -85,3 +85,94 @@ button:hover {
   text-decoration: underline;/* sirf "Sign Up" underline */
   color: blue;
 }
+
+/* === Reset and Common Styles === */
+
+
+/* === Todo Container === */
+/* */
+.todo-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.todo-container h1 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+#todo_input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+#todo_btn,
+#logout_btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#todo_btn {
+  background-color: #2575fc;
+  color: white;
+}
+
+#todo_btn:hover {
+  background-color: #1a5dcc;
+}
+
+#logout_btn {
+  background-color: #444;
+  color: white;
+}
+
+#logout_btn:hover {
+  background-color: #333;
+}
+
+#todo_list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  text-align: left;
+}
+
+#todo_list li {
+  background: #f2f2f2;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+#todo_list button {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#todo_list button:hover {
+  background-color: #e04344;
+}

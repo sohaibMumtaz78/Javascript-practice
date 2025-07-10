@@ -50,6 +50,7 @@ function login() {
             const user = userCredential.user;
             console.log("user")
             alert(`Welcome ${signin_email.value}`);
+             window.location.href = "todo.html";
             // ...
         })
         .catch((error) => {
