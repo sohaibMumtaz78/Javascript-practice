@@ -6,6 +6,10 @@ const fetchUserData = async () => {
     console.log("user", user)
 }
 
+// const userID = localStorage.getItem("user")
+
+readData()
+
 const namazlist = document.getElementById("namazlist")
 const logout_btn = document.getElementById("logout_btn")
 logout_btn.addEventListener('click', logout)
@@ -35,6 +39,7 @@ const addData = async () => {
             prayername: prayername.value,
             prayertime: prayertime.value,
             date: today,
+            uid: userID
         }
 
         await addDoc(collection(doc(db, "user", userID), "namaz"), userPrayer)
@@ -74,13 +79,16 @@ window.dltenamazlist = async function (namazid) {
         const userID = localStorage.getItem("user");
         const docRef = doc(db, "user", userID, "namaz", namazid);
         await deleteDoc(docRef);
-        alert("Namaz record deleted!");
+        alert("Namaz record deleted");
         readData();
     } catch (error) {
         alert(error.message);
     }
 }
 
+function showHistory() {
+    window.location.replace("./history.html")
+}
 
 function logout() {
     const auth = getAuth(app);
@@ -94,8 +102,20 @@ function logout() {
 }
 
 
+// function logout() {
+//     const auth = getAuth(app);
+//     signOut(auth).then(() => {
+//         // Sign-out successful.
+//         window.location.href = "./index.html";
+//     }).catch((error) => {
+//         // An error happened.
+//         alert(error.message)
+//     });
+// }
+
 
 window.fetchUserData = fetchUserData;
 window.addData = addData;
+window.showHistory = showHistory
 
 
