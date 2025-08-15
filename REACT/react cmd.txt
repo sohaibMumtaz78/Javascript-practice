@@ -1,0 +1,9 @@
+for new react app create
+1. cd ..
+2. npm create vite 
+3. set project name 
+4. select framework (React)
+5. select variants (js)
+6. then run command (cd+projectname)
+7. then run command (npm install)
+8. then run command (npm run dev)
