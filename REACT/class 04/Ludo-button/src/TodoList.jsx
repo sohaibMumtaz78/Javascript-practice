@@ -1,23 +1,71 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 function TodoList() {
-    let [todos, setTodos] = useState(["Sample Task"])
-    let [newlist , setNewlist] = useState("")
+    let [todos, setTodos] = useState([{ task: "Sample-Task", id: uuidv4(), isDone: false }])
+    let [newlist, setNewlist] = useState("")
 
-    let addList = () =>{
+    let addList = () => {
         // console.log("list added")
-        setTodos([...todos, newlist])
+        // setTodos([...todos, newlist])
+        setTodos((prevTask) => {
+            return ([...prevTask, { task: newlist, id: uuidv4() }])
+        })
         setNewlist("")
     }
-
-    let updateTodolist= (event)=>{
+    let updateTodolist = (event) => {
         // console.log(event.target.value)
         setNewlist(event.target.value)
     }
 
+    let deleteTodolist = (id) => {
+        // console.log("Lis deleted" , id )
+        // let copy= todos.filter((todos)=> todos.id != id)
+        // console.log(copy)
+        setTodos(todos.filter((todos) => todos.id != id))
+
+    }
+
+    let upperCase = () => {
+        setTodos((preValue) =>
+            preValue.map((todo) => {
+                // console.log(todo)
+                return {
+                    ...todo,
+                    task: todo.task.toUpperCase()
+                }
+            }))
+        // console.log(newArr)  
+    }
+
+    let signleUpperCase = (id) => {
+        setTodos((preValue) =>
+            preValue.map((todo) => {
+                // console.log(todo)
+                if (todo.id == id) {
+                    return {
+                        ...todo,
+                        task: todo.task.toUpperCase()
+                    }
+                }
+                else {
+                    return todo
+                }
+            }))
+        // console.log(newArr)  
+    }
+
+    let markIsDone = (id) => {
+        // console.log("done")
+        setTodos(
+            todos.map((todo) =>
+                todo.id === id ? { ...todo, isDone: !todo.isDone } : todo)
+        )
+    }
+
     return (
         <div>
-            <input type="text" placeholder="Enter Task" value={newlist}  onChange={updateTodolist}/>
+            <input type="text" placeholder="Enter Task" value={newlist} onChange={updateTodolist} />
             <button style={{ marginLeft: "10px" }} onClick={addList}>Add Task</button>
             <br />
             <br />
@@ -26,11 +74,20 @@ function TodoList() {
             <h4>Task List</h4>
             <ul>
                 {
-                    todos.map((todo) =>{
-                       return <li>{todo}</li>
+                    todos.map((todo) => {
+                        return <li key={todo.id} style={{ textDecoration: todo.isDone ? "line-through" : "none",}}>
+                            <span>{todo.task}</span>
+                            <button style={{ backgroundColor: "Red", marginLeft: "10px", marginTop: "10px" }} onClick={() => deleteTodolist(todo.id)}>delete</button>
+                            <button style={{ backgroundColor: "Red", marginLeft: "10px", marginTop: "10px" }} onClick={() => signleUpperCase(todo.id)}>UpperCase</button>
+                            <button style={{ backgroundColor: "Red", marginLeft: "10px", marginTop: "10px" }} onClick={() => markIsDone(todo.id)}>Mark Is done</button>
+                            {/* <button onClick={signleUpperCase}>UpperCase All</button> */}
+
+                        </li>
                     })
                 }
             </ul>
+            <br />
+            <button onClick={upperCase}>UpperCase All</button>
         </div>
     )
 }
