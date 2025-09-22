@@ -1,4 +1,4 @@
-for new react app create
+x	for new react app create
 1. cd ..
 2. npm create vite 
 3. set project name 
